@@ -10,6 +10,6 @@ public class Computer extends TangibleAsset{
     }
     
     public String getMakerName(){
-        this.makerName = getMakerName;
+        this.makerName = makerName;
     }
 }
