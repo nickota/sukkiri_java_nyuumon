@@ -1,17 +1,17 @@
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Main{
-    public static void main (String[] args){
-        //現在の年を表示
-        Date now = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(now);
+
+public class Main {
+    public static void main (String[] args) throws Exception {
         
-        int y = c.get(Calendar.YEAR);
-        System.out.println("今年は" + y + "年です");
-        //指定した日のDate型の値をとる
-        c.set(2010,8,22,1,23,45);
-        c.set(Calendar.YEAR, 2011);
-        Date past = c.getTime();
+        //本日の日時の表示
+        Date now = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        
+        String s = f.format(now);
+        System.out.println(s);
+        
+        //指定日時の文字列を解析しDate型として得る
+        Date d = f.parse("2011/09/22 01:23:45");
     }
 }
