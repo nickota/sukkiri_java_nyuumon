@@ -1,24 +1,24 @@
-import java.util.Date;
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
-
-public class Main {
-    public static void main(String[] args) {
-        //1
-        Date now = new Date();
-        //2
-        Calendar c = Calendar.getInstance();
-        c.setTime(now);
-        //3
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        //4
-        day =+ 100;
-        c.set(Calendar.DAY_OF_MONTH, day);
-        //5
-        Date future = c.getTime();
-        //6
-        SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年MM月dd日");
-        System.out.println(f.format(future));
+public class Account{
+    String accountNumber;
+    int balance;
+    
+    //①文字列表現のメソッド
+    public String toString(){
+        return "¥¥" + this.balance + "(口座番号:" + this.accountNumber + ") ";
     }
-        
+    
+    public boolean equals (Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof Account) {
+            Account a = (Account) o;
+            String an1 = this.accountNumber.trim();
+            String an2 = a.accountNumber.trim();
+            if (an1.equals(an2)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
