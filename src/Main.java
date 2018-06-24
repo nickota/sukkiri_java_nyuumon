@@ -1,8 +1,11 @@
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
-    public static void main (String[] args) throws IOException {
-        System.out.println("プログラムが起動しました");
-        throw new IOException();
+    public static void main(String[] args){
+        String filename = "c:¥test.text";
+        FileReader fr = new FileReader(filename);
+        char c1 = (char) fr.read();
+        char c2 = (char) fr.read();
+        fr.close();
     }
 }
