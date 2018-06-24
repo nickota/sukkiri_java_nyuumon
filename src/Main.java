@@ -1,12 +1,16 @@
-import java.io.*;
+import java.awt.FlowLayout;
+import javax.swing.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-        Class.forName("org.h2.Driver");
-        String dburl = "jdbc:h2:~/test";
-        String sql = "INSERT INTO EMPLOYEES(name) VALUES('iida')";
-        Connection conn = DriverManager.getConnection(dburl);
-        conn.createStatement().executeUpdate(sql);
-        conn.close();
+    public static void main(String[] args){
+        JFrame frame = new JFrame("はじめてのGUI");
+        JLabel label = new JLabel("Hello World");
+        JButton button = new JButton("押してね");
+        frame.getContentPane().setLayout(new FlowLayout());
+        frame.getContentPane().add(label);
+        frame.getContentPane().add(button);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 100);
+        frame.setVisible(true);
     }
 }
